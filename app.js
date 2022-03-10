@@ -93,10 +93,18 @@ function onTouchStart(evt) {
 
     for (var i = 0; i < touches.length; i++) {
       console.log('touchstart:' + i + '...');
+      touches[i].pageX = touches[i].pageX - 100;
       ongoingTouches.push(copyTouch(touches[i]));
       // var color = colorForTouch(touches[i]);
       ctx.beginPath();
-      ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false); // a circle at the start
+      ctx.arc(
+        touches[i].pageX - 100,
+        touches[i].pageY,
+        4,
+        0,
+        2 * Math.PI,
+        false
+      ); // a circle at the start
       // ctx.fillStyle = color;
       ctx.fill();
       console.log('touchstart:' + i + '.');
@@ -115,9 +123,9 @@ function onTouchEnd(evt) {
 
     if (idx >= 0) {
       ctx.beginPath();
-      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-      ctx.lineTo(touches[i].pageX, touches[i].pageY);
-      ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8); // and a square at the end
+      ctx.moveTo(ongoingTouches[idx].pageX - 100, ongoingTouches[idx].pageY);
+      ctx.lineTo(touches[i].pageX - 100, touches[i].pageY);
+      // ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8); // and a square at the end
       ongoingTouches.splice(idx, 1); // remove it; we're done
     } else {
       console.log("can't figure out which touch to end");
