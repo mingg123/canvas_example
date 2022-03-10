@@ -8,17 +8,24 @@ painting board  made with Vanilla JS
   파일 다운로드 가능 
 ```
 
+# Demo
+
+```
+
+[click!](https://minggcanvas.netlify.app/)
+
+```
+
+
 # Result
 
 <img width="689" alt="image" src="https://user-images.githubusercontent.com/52990629/157706406-87bceb82-0750-4294-8e46-7f80173ac835.png">
 
 
-# Demo
-
+# TODO
 ```
-
-https://minggcanvas.netlify.app/
-
+redo, undo
+지우기 
 ```
 
 # Reference
