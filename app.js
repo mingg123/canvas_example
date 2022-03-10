@@ -39,6 +39,21 @@ function onMouseMove(event) {
     ctx.stroke();
   }
 }
+
+function onTouchMove(event) {
+  if (event.target == canvas) {
+    event.preventDefault();
+  }
+  const x = event.offsetX;
+  const y = event.offsetY;
+  if (!painting) {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+  } else {
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  }
+}
 //mouseDown이 마우스를 클릭하는 순간
 function onMouseDown(event) {
   painting = true;
@@ -91,15 +106,16 @@ if (canvas) {
   canvas.addEventListener('click', handleCanvasClick);
   canvas.addEventListener('contextmenu', handleContextMenu);
 
-  canvas.addEventListener('touchmove', onMouseMove);
-  canvas.addEventListener('touchstart', onMouseDown);
-  canvas.addEventListener('touchend', onMouseUp);
-  canvas.addEventListener('touchcancel', onMouseLeave);
+  canvas.addEventListener('touchmove', onTouchMove, false);
+  canvas.addEventListener('touchstart', onMouseDown, false);
+  canvas.addEventListener('touchend', onMouseUp, false);
+  canvas.addEventListener('touchcancel', onMouseLeave, false);
 }
 if (colors) {
   Array.from(colors).forEach(color =>
     color.addEventListener('click', handleColorClick)
   );
+  console.log('click!');
 }
 
 if (range) {
