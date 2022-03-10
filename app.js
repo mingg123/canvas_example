@@ -13,7 +13,7 @@ canvas.width = 700;
 canvas.height = 700;
 
 ctx.fillStyle = 'white';
-ctx.strokeStyle = 'white';
+ctx.strokeStyle = '#2c2c2c';
 ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 ctx.fillStyle = 'white';
 ctx.lineWidth = 2.5;
