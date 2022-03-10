@@ -10,11 +10,8 @@ painting board  made with Vanilla JS
 
 # Demo
 
-```
-
 [click!](https://minggcanvas.netlify.app/)
 
-```
 
 
 # Result
