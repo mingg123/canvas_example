@@ -57,24 +57,22 @@ function onTouchMove(evt) {
     var idx = ongoingTouchIndexById(touches[i].identifier);
 
     if (idx >= 0) {
-      console.log('continuing touch ' + idx);
+      // console.log('continuing touch ' + idx);
       ctx.beginPath();
-      console.log(
-        'ctx.moveTo(' +
-          ongoingTouches[idx].pageX +
-          ', ' +
-          ongoingTouches[idx].pageY +
-          ');'
-      );
-      ctx.moveTo(ongoingTouches[idx].pageX - 100, ongoingTouches[idx].pageY);
-      console.log(
-        'ctx.lineTo(' + touches[i].pageX + ', ' + touches[i].pageY + ');'
-      );
-      ctx.lineTo(touches[i].pageX - 100, touches[i].pageY);
-      ctx.lineWidth = 4;
-      // ctx.strokeStyle = color;
-      ctx.stroke();
 
+      // console.log(
+      //   'ctx.moveTo(' +
+      //     ongoingTouches[idx].pageX +
+      //     ', ' +
+      //     ongoingTouches[idx].pageY +
+      //     ');'
+      // );
+      ctx.moveTo(ongoingTouches[idx].pageX - 100, ongoingTouches[idx].pageY);
+      // console.log(
+      //   'ctx.lineTo(' + touches[i].pageX + ', ' + touches[i].pageY + ');'
+      // );
+      ctx.lineTo(touches[i].pageX - 100, touches[i].pageY);
+      ctx.stroke();
       ongoingTouches.splice(idx, 1, copyTouch(touches[i])); // swap in the new touch record
       console.log('.');
     } else {
@@ -97,16 +95,17 @@ function onTouchStart(evt) {
       ongoingTouches.push(copyTouch(touches[i]));
       // var color = colorForTouch(touches[i]);
       ctx.beginPath();
-      ctx.arc(
-        touches[i].pageX - 100,
-        touches[i].pageY,
-        4,
-        0,
-        2 * Math.PI,
-        false
-      ); // a circle at the start
+      // ctx.arc(
+      //   touches[i].pageX - 100,
+      //   touches[i].pageY,
+      //   4,
+      //   0,
+      //   2 * Math.PI,
+      //   false
+      // );
+      // a circle at the start
       // ctx.fillStyle = color;
-      ctx.fill();
+      // ctx.fill();
       console.log('touchstart:' + i + '.');
     }
   }
