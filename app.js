@@ -90,6 +90,11 @@ if (canvas) {
   canvas.addEventListener('mouseleave', onMouseLeave);
   canvas.addEventListener('click', handleCanvasClick);
   canvas.addEventListener('contextmenu', handleContextMenu);
+
+  canvas.addEventListener('touchmove', onMouseMove);
+  canvas.addEventListener('touchstart', onMouseDown);
+  canvas.addEventListener('touchend', onMouseUp);
+  canvas.addEventListener('touchcancel', onMouseLeave);
 }
 if (colors) {
   Array.from(colors).forEach(color =>
