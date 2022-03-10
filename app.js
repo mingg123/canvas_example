@@ -66,11 +66,11 @@ function onTouchMove(evt) {
           ongoingTouches[idx].pageY +
           ');'
       );
-      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
+      ctx.moveTo(ongoingTouches[idx].pageX - 100, ongoingTouches[idx].pageY);
       console.log(
         'ctx.lineTo(' + touches[i].pageX + ', ' + touches[i].pageY + ');'
       );
-      ctx.lineTo(touches[i].pageX, touches[i].pageY);
+      ctx.lineTo(touches[i].pageX - 100, touches[i].pageY);
       ctx.lineWidth = 4;
       // ctx.strokeStyle = color;
       ctx.stroke();
