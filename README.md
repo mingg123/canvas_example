@@ -1,7 +1,7 @@
 # paintjs
 
 painting board  made with Vanilla JS 
-
+HTML canvas 
 # Description
 ```
   마우스 및 터치로 캔버스 그리기 가능 
