@@ -1,7 +1,6 @@
 # paintjs
 HTML canvas 
 
-painting board  made with Vanilla JS 
 
 # Description
 ```
